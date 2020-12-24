@@ -3,7 +3,7 @@
 1. このリポジトリをForkします
 2. ForkしたリポジトリをCloneし，ローカルで卒論を書きます．
 3. PDFを生成したいcommitに`v`から始まる名前のタグをつけ，***タグを***Pushします
-4. Github Actionsが作動し，リリースページのAssetsにPDFが並びます
+4. Github Actionsが作動し，リリースページのAssetsにPDF`graduation_article_(タグ名).pdf`が並びます
 
 ## カスタマイズ
 ### `.github/workflows/release.yml`
