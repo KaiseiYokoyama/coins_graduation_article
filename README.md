@@ -27,6 +27,7 @@ latexを`latexmk`を使ってコンパイルする際のあれこれを設定す
 Github Actionsの動作中，環境変数 `release_version` が定義されています．なので，例えばプリアンブルなどで，
 
 ```latex
+\usepackage{catchfile}
 \newcommand{\getenv}[2][]{%
   \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}%
   \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
