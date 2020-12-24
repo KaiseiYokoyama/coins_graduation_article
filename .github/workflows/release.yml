@@ -37,6 +37,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./article.pdf
-          asset_name: graduation_article
-_${{ env.release_version }}.pdf
+          asset_name: graduation_article_${{ env.release_version }}.pdf
           asset_content_type: application/pdf
