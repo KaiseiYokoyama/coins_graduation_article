@@ -16,6 +16,9 @@ latexまわりの挙動については，[こちら](https://github.com/KaiseiYo
 ### `.latexmkrc`
 latexを`latexmk`を使ってコンパイルする際のあれこれを設定するファイルです．
 
+## 注意
+タグ名に`/`が入っていると，Github Actionsがエラーを出します．
+
 ## その他
 ### tag名（バージョン名）をlatexの文書中で参照したい
 Github Actionsの動作中，環境変数 `release_version` が定義されています．なので，例えばプリアンブルなどで，
