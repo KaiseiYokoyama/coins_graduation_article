@@ -1,0 +1,56 @@
+\newdimen\vspacetitle \newdimen\vspaceabstract
+\vspacetitle=0.5\textheight
+
+\def\advisor#1{\gdef\@advisor{#1}}
+\def\majorfield#1{\gdef\@majorfield{#1}}
+\def\fiscalyear#1{\gdef\@fiscalyear{#1}}
+
+\def\maketitle{\par
+\begingroup
+\def\@makefnmark{\hbox
+     to\z@{$\m@th^{\@thefnmark}$\hss}}%
+\global\@topnum\z@
+\@maketitle
+\thispagestyle{plain}\@thanks
+\endgroup
+
+\let\maketitle\relax
+\let\@maketitle\relax
+\let\majorfield\relax\gdef\@majorfield{}
+\gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
+
+\def\@maketitle{
+\newpage\null
+\vbox to \vspacetitle{
+\thispagestyle{empty}
+\begin{minipage}{6in}
+\begin{center}
+\vspace*{2cm}
+{\LARGE \@fiscalyear 年度}
+
+\vspace{1cm}
+{\LARGE 筑波大学情報学群情報科学類}
+
+\vspace{1cm}
+{\LARGE 卒業研究論文}
+
+\vspace{2.4cm}
+{\huge 題目 \\
+\vspace{0.5cm}
+\uline{\@title}} \vfill
+
+\vspace{6cm plus 2cm minus 2cm}
+
+\underline{\LARGE 主専攻 ~ \@majorfield}
+\vspace{1cm}
+
+\underline{\huge 著者 ~ \@author}
+
+\vspace{5mm}
+
+\underline{\LARGE 指導教員 ~ \@advisor}
+
+\end{center}
+\end{minipage}
+}
+}

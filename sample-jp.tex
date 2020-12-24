@@ -1,0 +1,182 @@
+%%
+% このファイルは筑波大学情報学群情報科学類の卒業研究論文のサンプルです。
+% このファイルを書き換えて、このサンプルと同様の書式の論文をLaTeXを使って
+% 作成できます。
+% 
+% OSやLaTeXの設定によっては漢字コードや改行コードを変更する必要があります。
+%%
+\documentclass[a4paper,11pt]{jreport}
+
+%%【PDF, PostScript, JPEG, PNG等の画像の貼り込み】
+%% dvipdfmx を使う場合
+\usepackage[dvipdfmx]{graphicx}
+%% dvipdfmx を使ってPDFの「しおり」を付ける場合
+%%\usepackage[dvipdfmx,bookmarks=true,bookmarksnumbered=true,bookmarkstype=toc]{hyperref} \usepackage{pxjahyper}
+\usepackage{ulem}
+\usepackage{times} % use Times font instead of default one
+
+\setcounter{tocdepth}{3}
+\setcounter{page}{-1}
+
+\setlength{\oddsidemargin}{0.1in}
+\setlength{\evensidemargin}{0.1in} 
+\setlength{\topmargin}{0in}
+\setlength{\textwidth}{6in} 
+%\setlength{\textheight}{10.1in}
+\setlength{\parskip}{0em}
+\setlength{\topsep}{0em}
+
+%% タイトル生成用パッケージ（重要）
+\usepackage{coins-jp}
+
+%% タイトル
+\title{情報科学類卒業論文の執筆上の注意について}
+%% 著者
+\author{筑波 太郎}
+%% 指導教員
+\advisor{筑波 大二郎}
+
+%% 年度と主専攻名
+\fiscalyear{2020}
+%\majorfield{ソフトウェアサイエンス主専攻}
+\majorfield{情報システム主専攻}
+%\majorfield{知能情報メディア主専攻}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\thispagestyle{empty}
+\vspace*{20pt plus 1fil}
+\parindent=1zw
+\noindent
+%%
+%% 論文の要旨
+%%
+\begin{center}
+{\Large \bf 要　　旨}
+\vspace{2cm}
+\end{center}
+この文書は筑波大学情報学群情報科学類の卒業研究論文のサンプルである。
+このファイルを書き換えて、このサンプルと同様の書式の論文を \LaTeX を
+使って作成できる。
+
+このサンプルは、学生が論文を作成する手間を軽減するために提供している。
+このサンプルで示す書式はあくまで例であり、要項に準拠していれば、この
+ファイルを使わずに自分で決めた書式を用いてもよい。
+
+%%%%%
+\par
+\vspace{0pt plus 1fil}
+\newpage
+
+\pagenumbering{roman} % I, II, III, IV 
+\tableofcontents
+\listoffigures
+%\listoftables
+
+\pagebreak \setcounter{page}{1}
+\pagenumbering{arabic} % 1,2,3
+
+\chapter{序論}
+
+論文は序論で開始し、最終章は結論で終える。序論には論文全体の見通し・何が
+研究の要点であるか・何に焦点を当てて研究を行うか等、この章を読めば論文の
+分野・内容が大筋で掴めるように書く。
+
+研究の内容や分野によっては書き方が異なる場合もあるので、詳しいことは指導
+教員に聞くとよい。この文書は主にスタイルの作成方法と、論文の体裁を示すの
+みであり、どうやったらよい論文になるかの示唆は含まれていない。
+
+\chapter{形式}
+
+ここでは、論文の表紙および本体の記述方法について述べる。
+
+\section{表紙}
+
+表紙は、以下の各項目に相当する文字列を記述した上で、\texttt{$\backslash$maketitle}により作成する。
+
+\begin{description} \parskip=1pt
+\item{題目: }
+題目は\texttt{$\backslash$title}に記述する。行替えを行う場合には $\backslash \backslash$ を入力する。
+ただし、題目の最後に$\backslash \backslash$ を入力するとコンパイルが通らなくなるので注意する。
+なお、題目が複数行に渡るなどの理由により表紙ページがあふれた場合にはスタイルファイルを変更する必要がある。
+\item{著者名: }
+著者名は\texttt{$\backslash$author}に記述する。
+\item{指導教員名: }
+指導教員名は\texttt{$\backslash$advisor}に記述する。
+2名以上の場合には複数名を記述する。
+\item{主専攻名: }
+主専攻名は\texttt{$\backslash$majorfield}に記述する。「○○主専攻」という形式にすること。
+\item{年度: }
+年度は\texttt{$\backslash$fiscalyear} に記述する。年度は提出時のものを記述すること。
+\end{description}
+
+\section{本体}
+
+本体は1段組で記述する。
+
+図表には番号と説明（caption）を付け、文章中で参照する。
+表~\ref{table:scores}と図~\ref{figure:smile}はそれぞれ
+表と図の例である。表の説明は表の上に、図の説明は図の下に書くことが多い。
+図の挿入に用いる \LaTeX のパッケージについては使用環境に合わせて自由に選択してほしい。
+
+\begin{table}[hbt]
+\caption{表の例}
+\label{table:scores}
+\begin{center}
+\begin{tabular}{|c|r|r|r|r|}
+\hline
+年度 & 1年次 & 2年次 & 3年次 & 4年次 \\
+\hline
+2016 & 85 & 92 & 86 &  88 \\
+2017 & 83 & 89 & 90 & 102 \\
+2018 & 88 & 87 & 91 & 112 \\
+\hline 
+\end{tabular}
+\end{center}
+\end{table}
+\medskip
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3cm]{smile.pdf}
+\end{center}
+\caption{図の例}
+\label{figure:smile}
+\end{figure}
+
+レポートや論文の書き方、日本語の\LaTeX の使い方に関しては、Web 上の情報や
+参考書など~\cite{Bibunsho,ScienceResearchWriting}を参照のこと。
+また、参考文献、図、表の入れ方を含む、文章のスタイルについては、
+ACM, IEEE, 情報処理学会, 電子情報通信学会などの学会が出版している
+ジャーナルや国際会議の論文のスタイルを参考にするとよい。
+
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{\numberline{}謝辞}
+
+\newpage
+
+\addcontentsline{toc}{chapter}{\numberline{}参考文献}
+\renewcommand{\bibname}{参考文献}
+
+%% 参考文献に jbibtex を使う場合
+%\bibliographystyle{junsrt}
+%\bibliography{samplebib}
+%% [compile] jbibtex sample; platex sample; platex sample;
+
+%% 参考文献を直接ファイルに含めて書く場合
+\begin{thebibliography}{1}
+\bibitem{Bibunsho}
+奥村 晴彦, 黒木 裕介.
+\newblock LaTeX2ε美文書作成入門 改訂第7版.
+\newblock 技術評論社, 2017.
+
+\bibitem{ScienceResearchWriting}
+Hilary Glasman-Deal.
+\newblock Science Research Writing: A Guide for Non-Native Speakers of English.
+\newblock Imperial College Press, 2009.
+\end{thebibliography}
+
+\end{document}
