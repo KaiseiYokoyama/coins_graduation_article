@@ -1,9 +1,12 @@
 # 筑波大学情報科学類卒業論文テンプレート + CI
 ## 使い方
-1. このリポジトリをForkします
+1. このリポジトリをForkします．
 2. ForkしたリポジトリをCloneし，ローカルで卒論を書きます．
-3. PDFを生成したいcommitに`v`から始まる名前のタグをつけ，***タグを***Pushします
-4. Github Actionsが作動し，リリースページのAssetsにPDF`graduation_article_(タグ名).pdf`が並びます
+3. PDFを生成したいcommitに`v`から始まる名前のタグをつけ，***タグを***Pushします．
+4. Github Actionsが作動し（[例][actions_example]），リリースページのAssetsにPDF`graduation_article_(タグ名).pdf`が並びます（[例][release_example]）．
+
+[actions_example]: https://github.com/KaiseiYokoyama/coins_graduation_article/runs/1603572589
+[release_example]: https://github.com/KaiseiYokoyama/coins_graduation_article/releases/tag/v_sample
 
 ## カスタマイズ
 ### `.github/workflows/release.yml`
